@@ -1,4 +1,4 @@
-public class PollControlPanel {
+
     /*
  * Implements the control panel for the Poll program
  */

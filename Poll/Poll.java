@@ -1,5 +1,4 @@
-public class Poll {
-  
+
     /**
  * Implements a program with a pie chart
  * that shows interactive polling results for three candidates
@@ -30,6 +29,7 @@ public class Poll extends JFrame
     w.setDefaultCloseOperation(EXIT_ON_CLOSE);
     w.setVisible(true);
   }
-}
 
 }
+
+
