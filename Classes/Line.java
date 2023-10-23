@@ -32,8 +32,15 @@ public class Line {
 		
 	}
 	
-	// public boolean sameLength(Line otherLine)
+	public boolean sameLength(Line otherLine)
 	{
+		double d1 = this.distance();
+		double d2 = otherLine.distance();
+		return Math.abs(d1-d2) <= .001;
+
+		
+
+
 		
 	}
 	
@@ -82,8 +89,8 @@ public class Line {
 		System.out.println("distance = " + dist);
 		System.out.println("Midpoint = " + p1);
 		
-		//System.out.println("distance = " + l2.distance());
-		//System.out.println("Same length? " + l1.sameLength(l2));
+		System.out.println("distance = " + l2.distance());
+		System.out.println("Same length? " + l1.sameLength(l2));
 
 	}
 
