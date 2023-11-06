@@ -37,6 +37,15 @@ public class Conditionals {
         System.out.println(ab.pickUpPhone(true, false, false));
         System.out.println(ab.pickUpPhone(false, false, false));
         System.out.println();
+
+        System.out.println(ab.setAlarm(1, false));
+        System.out.println(ab.setAlarm(5, false));
+        System.out.println(ab.setAlarm(0, false));
+        System.out.println(ab.setAlarm(2, true)); 
+        System.out.println(ab.setAlarm(4, true));
+        System.out.println(ab.setAlarm(6, true));
+        System.out.println();
+
         
  
 
@@ -58,11 +67,19 @@ public class Conditionals {
     }
     
     public String setAlarm(int day, boolean onVacation){
-        if ((day > 5) || (day<1) && (onVacation==false)) return  ("10:00");
-        if ((day > 5) || (day<1) && (onVacation==true)) return  ("off");
-        if ((day > 0) || (day<6) && (onVacation==false)) return  ("7:00");
-        if ((day > 0) || (day<6) && (onVacation==true)) return  ("10:00");
+        if ((day > 5 || day<1) && (onVacation==false)) return  "10:00";
+        if  ((day > 5 || day<1) && (onVacation==true)) return  "off";
+        if ((day > 0) && (day<6) && (onVacation==false)) return  "7:00";
+        if (day > 0 && day<6 && onVacation==true) return  "10:00";
+        return null;
+
+   }
+
+    public boolean onesDigitSame(int first, int second, int third ){
+        if 
+
 
     }
-}
 
+
+}
