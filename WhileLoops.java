@@ -72,8 +72,8 @@ public class WhileLoops {
 
     public static void main(String [] args){
         WhileLoops test = new WhileLoops();
-        System.out.println(test.addOdds(6));
         System.out.println(test.addOdds(5));
+        System.out.println(test.addOdds(7));
         System.out.println(test.addOdds(9) + "\n");
 
         System.out.println(test.sumDigits(10));
@@ -81,7 +81,6 @@ public class WhileLoops {
         System.out.println(test.sumDigits(12) + "\n");
 
         System.out.println(test.howManyYears(111.2, 120));
-        System.out.println(test.howManyYears(111.2, 135));
         System.out.println(test.howManyYears(111.2, 150) + "\n");
 
         test.printSum(10);
@@ -91,8 +90,8 @@ public class WhileLoops {
 
         System.out.println(test.isPerfectSquare(64));
         System.out.println(test.isPerfectSquare(121));
-        System.out.println(test.isPerfectSquare(450));
-        System.out.println(test.isPerfectSquare(800) + "\n");
+        System.out.println(test.isPerfectSquare(45));
+        System.out.println(test.isPerfectSquare(80) + "\n");
 
     }
     
