@@ -20,6 +20,18 @@ public class Factorials {
                 }
                 return curE;
             }
+
+            public static double calcEX(int num){
+                double curE = 1;
+                double prevE = 0;
+        
+                for(int i = 1; curE - prevE > 0.001; i++){
+                    prevE = curE;
+                    curE += (Math.pow(num, i) / calcFactorial(i));
+                }
+        
+                return curE;
+            }
         
 
     
@@ -31,11 +43,13 @@ public class Factorials {
         Factorials test = new Factorials();
         int n= 1;
         for(n=1; n <= 20; n ++){
-            System.out.println(test.calcFactorial(n));
+            System.out.println(calcFactorial(n));
         }
         System.out.println();
         System.out.printf("\ne = %2.3f \n \n", calcE());
-        
+        for(int i = 1; i <= 5; i++){
+            System.out.printf("e to the power of %d = %2.3f \n", i, calcEX(i));
+        }
         
     }
 }
