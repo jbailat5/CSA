@@ -32,6 +32,9 @@ public class StringExercises {
         if (month.length()<2) month = "0" + month;
         return day + "-" + month + "-" + year;
     }
+    public static boolean startsWith(String s, String prefix){
+        return (s.indexOf(prefix) == 0);
+    }
 
 
 public static void main(String[] args) {
@@ -48,12 +51,12 @@ public static void main(String[] args) {
     System.out.println("4/20/2014 becomes " + convertDate2("4/20/2014"));
     System.out.println("04/2/2014 becomes " + convertDate2("04/2/2014"));
     System.out.println("4/2/2014 becomes " + convertDate2("4/2/2014"));
-    // System.out.println("\nstartsWith");
-    // System.out.println(startsWith("architecture", "arch"));
-    // System.out.println(startsWith("architecture", "a"));
-    // System.out.println(startsWith("arch", "architecture"));
-    // System.out.println(startsWith("architecture", "rch"));
-    // System.out.println(startsWith("architecture", "architecture"));
+    System.out.println("\nstartsWith");
+    System.out.println(startsWith("architecture", "arch"));
+    System.out.println(startsWith("architecture", "a"));
+    System.out.println(startsWith("arch", "architecture"));
+    System.out.println(startsWith("architecture", "rch"));
+    System.out.println(startsWith("architecture", "architecture"));
     // System.out.println("\nendsWith");
     // System.out.println(endsWith("astronomy", "nomy"));
     // System.out.println(endsWith("astronomy", "y"));
