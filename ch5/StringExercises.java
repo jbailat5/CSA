@@ -7,11 +7,17 @@ public class StringExercises {
         s1 = s1.trim();
         int x = s1.indexOf(",");
         return s1.substring(x + 1).trim() + " " + s1.substring(0,x).trim();
-
-
+    }
+    public static String negative(String s){
+        String s1 = s.replace('0', '2');
+        String s2 = s1.replace('1', '0');
+        String s3 = s2.replace('2', '1');
+        return s3;
+    }
+    public static String convertDate(String dateStr){
+        int x = dateStr.indexOf("/");
 
     }
-
 
 
 public static void main(String[] args) {
@@ -21,8 +27,8 @@ public static void main(String[] args) {
     System.out.println(convertName(" Reubenstein, Lori Renee "));
     System.out.println(convertName("Biden,Joe"));
     System.out.println(convertName("the Clown, Bozo"));
-    // System.out.println(negative("0010111001"));
-    // System.out.println(negative("11111111"));
+    System.out.println(negative("0010111001"));
+    System.out.println(negative("11111111"));
     // System.out.println("04/20/2014 becomes " + dateString("04/20/2014"));
     // System.out.println("04/20/2014 becomes" + dateString2("04/20/2014"));
     // System.out.println("4/20/2014 becomes" + dateString2("4/20/2014"));
@@ -52,3 +58,5 @@ public static void main(String[] args) {
     // System.out.println(removeTag("Happy <b>Hello World</b> Birthday", "b"));
 }
 }
+
+
