@@ -15,8 +15,22 @@ public class StringExercises {
         return s3;
     }
     public static String convertDate(String dateStr){
+        String dateE;
+        dateE= dateStr.substring(3,6) + dateStr.substring(0, 3) + dateStr.substring(6, 10);
+        return dateE;
+    }
+    public static String convertDate2(String dateStr){
         int x = dateStr.indexOf("/");
-
+        int j = dateStr.lastIndexOf("/");
+        String day;
+        String month;
+        String year;
+        day = dateStr.substring(x+1,j);
+        month = dateStr.substring(0,x);
+        year = dateStr.substring(j+1);
+        if (day.length()<2) day = "0" + day;
+        if (month.length()<2) month = "0" + month;
+        return day + "-" + month + "-" + year;
     }
 
 
@@ -29,11 +43,11 @@ public static void main(String[] args) {
     System.out.println(convertName("the Clown, Bozo"));
     System.out.println(negative("0010111001"));
     System.out.println(negative("11111111"));
-    // System.out.println("04/20/2014 becomes " + dateString("04/20/2014"));
-    // System.out.println("04/20/2014 becomes" + dateString2("04/20/2014"));
-    // System.out.println("4/20/2014 becomes" + dateString2("4/20/2014"));
-    // System.out.println("04/2/2014 becomes" + dateString2("04/2/2014"));
-    // System.out.println("4/2/2014 becomes" + dateString2("4/2/2014"));
+    System.out.println("04/20/2014 becomes " + convertDate("04/20/2014"));
+    System.out.println("04/20/2014 becomes " + convertDate2("04/20/2014"));
+    System.out.println("4/20/2014 becomes " + convertDate2("4/20/2014"));
+    System.out.println("04/2/2014 becomes " + convertDate2("04/2/2014"));
+    System.out.println("4/2/2014 becomes " + convertDate2("4/2/2014"));
     // System.out.println("\nstartsWith");
     // System.out.println(startsWith("architecture", "arch"));
     // System.out.println(startsWith("architecture", "a"));
