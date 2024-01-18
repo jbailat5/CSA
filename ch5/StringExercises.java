@@ -35,6 +35,27 @@ public class StringExercises {
     public static boolean startsWith(String s, String prefix){
         return (s.indexOf(prefix) == 0);
     }
+    public static boolean endsWith(String s, String suffix){
+        if (s.length() < suffix.length()){ 
+            return false; 
+        }
+        for (int i = 0; i < suffix.length(); i++){
+            if (s.charAt(s.length() - 1 - i) != suffix.charAt(suffix.length() - 1 - i)){ // if  character in s != character in suffix
+                return false; 
+            }
+        }
+        return true; 
+    }
+    public static String removeTag(String str, String tag){
+        try {
+            String newStr = str.substring(0, str.indexOf('/')) + str.substring(str.indexOf('/')+1);
+            if(tag.equals(newStr.substring(newStr.indexOf('<')+1, newStr.indexOf('>'))) && tag.equals(newStr.substring(newStr.lastIndexOf('<')+1, newStr.lastIndexOf('>'))) && str.indexOf('/') > str.lastIndexOf('<')) {
+                return str.substring(0, str.indexOf('<')) + str.substring(str.indexOf('>') + 1, str.lastIndexOf('<')) + str.substring(str.lastIndexOf('>')+1);          
+            }            
+        } catch (StringIndexOutOfBoundsException s){}
+
+        return str;
+   }
 
 
 public static void main(String[] args) {
@@ -57,22 +78,22 @@ public static void main(String[] args) {
     System.out.println(startsWith("arch", "architecture"));
     System.out.println(startsWith("architecture", "rch"));
     System.out.println(startsWith("architecture", "architecture"));
-    // System.out.println("\nendsWith");
-    // System.out.println(endsWith("astronomy", "nomy"));
-    // System.out.println(endsWith("astronomy", "y"));
-    // System.out.println(endsWith("astronomy", "nom"));
-    // System.out.println(endsWith("nomy", "astronomy"));
-    // System.out.println(endsWith("astronomy", "astronomy"));
-    // System.out.println("\nremoveTag");
-    // System.out.println(removeTag("<b>Hello World</b>", "b"));
-    // System.out.println(removeTag("<b>Hello World</b>", "head"));
-    // System.out.println(removeTag("Hello World</b>", "b"));
-    // System.out.println(removeTag("<b>Hello World", "b"));
-    // System.out.println(removeTag("</img>Hello World<img>", "img"));
-    // System.out.println(removeTag("Happy Birthday <b>Hello World</b>", "b"));
-    // System.out.println(removeTag("<title>Hello World</title> Happy Birthday",
-    // "title"));
-    // System.out.println(removeTag("Happy <b>Hello World</b> Birthday", "b"));
+    System.out.println("\nendsWith");
+    System.out.println(endsWith("astronomy", "nomy"));
+    System.out.println(endsWith("astronomy", "y"));
+    System.out.println(endsWith("astronomy", "nom"));
+    System.out.println(endsWith("nomy", "astronomy"));
+    System.out.println(endsWith("astronomy", "astronomy"));
+    System.out.println("\nremoveTag");
+    System.out.println(removeTag("<b>Hello World</b>", "b"));
+    System.out.println(removeTag("<b>Hello World</b>", "head"));
+    System.out.println(removeTag("Hello World</b>", "b"));
+    System.out.println(removeTag("<b>Hello World", "b"));
+    System.out.println(removeTag("</img>Hello World<img>", "img"));
+    System.out.println(removeTag("Happy Birthday <b>Hello World</b>", "b"));
+    System.out.println(removeTag("<title>Hello World</title> Happy Birthday",
+    "title"));
+    System.out.println(removeTag("Happy <b>Hello World</b> Birthday", "b"));
 }
 }
 
