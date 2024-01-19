@@ -46,17 +46,17 @@ public class StringExercises {
         }
         return true; 
     }
-    public static String removeTag(String str, String tag){
-        try {
-            String newStr = str.substring(0, str.indexOf('/')) + str.substring(str.indexOf('/')+1);
-            if(tag.equals(newStr.substring(newStr.indexOf('<')+1, newStr.indexOf('>'))) && tag.equals(newStr.substring(newStr.lastIndexOf('<')+1, newStr.lastIndexOf('>'))) && str.indexOf('/') > str.lastIndexOf('<')) {
-                return str.substring(0, str.indexOf('<')) + str.substring(str.indexOf('>') + 1, str.lastIndexOf('<')) + str.substring(str.lastIndexOf('>')+1);          
-            }            
-        } catch (StringIndexOutOfBoundsException s){}
-
-        return str;
-   }
-
+    public static String removeTag(String string, String tag) {
+        String openingTag = "<" + tag + ">";
+        String closingTag = "</" + tag + ">";
+        int startTagIndex = string.indexOf(openingTag);
+        int endTagIndex = string.indexOf(closingTag);
+        if (startTagIndex != -1 && endTagIndex != -1 && startTagIndex < endTagIndex) {
+            return string.substring(startTagIndex + openingTag.length(), endTagIndex);
+        } else {
+            return string;
+        }
+    }
 
 public static void main(String[] args) {
     System.out.println(scroll("Hello World"));
