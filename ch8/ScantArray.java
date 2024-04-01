@@ -37,11 +37,14 @@ public class ScantArray {
      *                0 <= col < getNumColumns()
      */
     public int getValueAt(int row, int col){
-        /* part a */
-        
+        int result = 0;
+        for(int i = 0; i < entries.size(); i++){
+            ScantArrayEntry newEntry = entries.get(i);
+            if(newEntry.getRow()== row && newEntry.getColumn()== col) result= newEntry.getValue();
+
+            }
 		
-		
-        return 0;    // replace this
+        return result;   
     }
 
     /** Removes a column from the scant array and shifts
@@ -51,8 +54,9 @@ public class ScantArray {
      * Precondition:  0 <= col < getNumColumns()
      */
     public void removeColumn(int col){
-        /* part b */
-        
+        for(int i = 0; i < col; i++){
+            if indexOf(col).equals
+        }       
 		
 		
 		
